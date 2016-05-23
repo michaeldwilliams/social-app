@@ -18,10 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
-        let viewController = FeedTVC()
-        viewController.dataSource = FeedDataSource()
-        window!.rootViewController = viewController
+        
         window!.makeKeyAndVisible()
+        let feedController = FeedController(collectionViewLayout: UICollectionViewFlowLayout())
+        let navigationController = UINavigationController(rootViewController: feedController)
+        window?.rootViewController = navigationController
+        UINavigationBar.appearance().barTintColor = UIColor.blueColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
+        application.statusBarStyle = .LightContent
+        
         return true
     }
 

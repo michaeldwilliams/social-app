@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C60FD4B4A3598B3AB067539 /* Pods_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA637D4A6E2C88C77E04E7B4 /* Pods_social.framework */; };
+		21541F2E1CF3855D00E14EDE /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21541F2D1CF3855D00E14EDE /* FeedController.swift */; };
+		21541F301CF38AB800E14EDE /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21541F2F1CF38AB800E14EDE /* FeedCell.swift */; };
 		BC1303111CF28DE300E3AC80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1303101CF28DE300E3AC80 /* AppDelegate.swift */; };
 		BC1303181CF28DE300E3AC80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1303171CF28DE300E3AC80 /* Assets.xcassets */; };
 		BC13031B1CF28DE300E3AC80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1303191CF28DE300E3AC80 /* LaunchScreen.storyboard */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21541F2D1CF3855D00E14EDE /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		21541F2F1CF38AB800E14EDE /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		2E70CED4A2FB8CF77C6A08B3 /* Pods_socialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4048393AFB0C22D60DBFF703 /* Pods-socialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialUITests/Pods-socialUITests.release.xcconfig"; sourceTree = "<group>"; };
 		587CF0329552152EF2B4471D /* Pods_socialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,11 +114,13 @@
 				BC1303171CF28DE300E3AC80 /* Assets.xcassets */,
 				BC1303191CF28DE300E3AC80 /* LaunchScreen.storyboard */,
 				BC1303101CF28DE300E3AC80 /* AppDelegate.swift */,
+				21541F2D1CF3855D00E14EDE /* FeedController.swift */,
+				BC2E71981CF29B1400A84C93 /* FeedDataSource.swift */,
+				21541F2F1CF38AB800E14EDE /* FeedCell.swift */,
+				BC2E719A1CF29ED700A84C93 /* Post.swift */,
+				BC2E71961CF29A1000A84C93 /* FeedTVC.swift */,
 				BC13031C1CF28DE300E3AC80 /* Info.plist */,
 				BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */,
-				BC2E71961CF29A1000A84C93 /* FeedTVC.swift */,
-				BC2E71981CF29B1400A84C93 /* FeedDataSource.swift */,
-				BC2E719A1CF29ED700A84C93 /* Post.swift */,
 			);
 			path = social;
 			sourceTree = "<group>";
@@ -340,8 +346,10 @@
 			files = (
 				BC1303111CF28DE300E3AC80 /* AppDelegate.swift in Sources */,
 				BC2E71971CF29A1000A84C93 /* FeedTVC.swift in Sources */,
+				21541F2E1CF3855D00E14EDE /* FeedController.swift in Sources */,
 				BC2E71991CF29B1400A84C93 /* FeedDataSource.swift in Sources */,
 				BC2E719B1CF29ED700A84C93 /* Post.swift in Sources */,
+				21541F301CF38AB800E14EDE /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

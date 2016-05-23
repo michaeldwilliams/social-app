@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct Post {
     var name:String
-    var date:NSDate
-    var 
+    var profileImage:UIImage
+    var textContent:String
+    var postDateTime:NSDate
+    var imageContent:UIImage
 }
