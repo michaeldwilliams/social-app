@@ -17,18 +17,7 @@
 		BC2E71971CF29A1000A84C93 /* FeedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E71961CF29A1000A84C93 /* FeedTVC.swift */; };
 		BC2E71991CF29B1400A84C93 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E71981CF29B1400A84C93 /* FeedDataSource.swift */; };
 		BC2E719B1CF29ED700A84C93 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E719A1CF29ED700A84C93 /* Post.swift */; };
-		DE07FD33542A45A255A84725 /* Pods_socialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587CF0329552152EF2B4471D /* Pods_socialTests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BC1303221CF28DE300E3AC80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC1303051CF28DE300E3AC80 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BC13030C1CF28DE300E3AC80;
-			remoteInfo = social;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		21541F2D1CF3855D00E14EDE /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
@@ -44,8 +33,6 @@
 		BC1303171CF28DE300E3AC80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC13031A1CF28DE300E3AC80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC13031C1CF28DE300E3AC80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC1303211CF28DE300E3AC80 /* socialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = socialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC1303271CF28DE300E3AC80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC2E71961CF29A1000A84C93 /* FeedTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTVC.swift; sourceTree = "<group>"; };
 		BC2E71981CF29B1400A84C93 /* FeedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
@@ -61,14 +48,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C60FD4B4A3598B3AB067539 /* Pods_social.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BC13031E1CF28DE300E3AC80 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE07FD33542A45A255A84725 /* Pods_socialTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				BC13030F1CF28DE300E3AC80 /* social */,
-				BC1303241CF28DE300E3AC80 /* socialTests */,
 				BC13030E1CF28DE300E3AC80 /* Products */,
 				36D50D02276287F5D0F247C1 /* Pods */,
 				CFA5E156F865A23E83860E12 /* Frameworks */,
@@ -103,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				BC13030D1CF28DE300E3AC80 /* social.app */,
-				BC1303211CF28DE300E3AC80 /* socialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,14 +100,6 @@
 				BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */,
 			);
 			path = social;
-			sourceTree = "<group>";
-		};
-		BC1303241CF28DE300E3AC80 /* socialTests */ = {
-			isa = PBXGroup;
-			children = (
-				BC1303271CF28DE300E3AC80 /* Info.plist */,
-			);
-			path = socialTests;
 			sourceTree = "<group>";
 		};
 		CFA5E156F865A23E83860E12 /* Frameworks */ = {
@@ -166,27 +135,6 @@
 			productReference = BC13030D1CF28DE300E3AC80 /* social.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BC1303201CF28DE300E3AC80 /* socialTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BC1303381CF28DE300E3AC80 /* Build configuration list for PBXNativeTarget "socialTests" */;
-			buildPhases = (
-				BE39E6EF09A6D9D1F2718E1B /* 📦 Check Pods Manifest.lock */,
-				BC13031D1CF28DE300E3AC80 /* Sources */,
-				BC13031E1CF28DE300E3AC80 /* Frameworks */,
-				BC13031F1CF28DE300E3AC80 /* Resources */,
-				89D58C679AB10795A96DF49F /* 📦 Embed Pods Frameworks */,
-				611D666C2A5F43D8FD4FB1FD /* 📦 Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BC1303231CF28DE300E3AC80 /* PBXTargetDependency */,
-			);
-			name = socialTests;
-			productName = socialTests;
-			productReference = BC1303211CF28DE300E3AC80 /* socialTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +148,6 @@
 					BC13030C1CF28DE300E3AC80 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 2L7A86YQ36;
-					};
-					BC1303201CF28DE300E3AC80 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = BC13030C1CF28DE300E3AC80;
 					};
 				};
 			};
@@ -221,7 +165,6 @@
 			projectRoot = "";
 			targets = (
 				BC13030C1CF28DE300E3AC80 /* social */,
-				BC1303201CF28DE300E3AC80 /* socialTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,62 +180,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC13031F1CF28DE300E3AC80 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		3B10CFD6E6C22764116480C6 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		611D666C2A5F43D8FD4FB1FD /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-socialTests/Pods-socialTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		89D58C679AB10795A96DF49F /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-socialTests/Pods-socialTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BE39E6EF09A6D9D1F2718E1B /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,22 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC13031D1CF28DE300E3AC80 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BC1303231CF28DE300E3AC80 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BC13030C1CF28DE300E3AC80 /* social */;
-			targetProxy = BC1303221CF28DE300E3AC80 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BC1303191CF28DE300E3AC80 /* LaunchScreen.storyboard */ = {
@@ -493,32 +369,6 @@
 			};
 			name = Release;
 		};
-		BC1303391CF28DE300E3AC80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA092EEAF767D85BD4ADEB6D /* Pods-socialTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = socialTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.michaeldwilliams.socialTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/social.app/social";
-			};
-			name = Debug;
-		};
-		BC13033A1CF28DE300E3AC80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E45B4998B77501D0BF48E595 /* Pods-socialTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = socialTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.michaeldwilliams.socialTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/social.app/social";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -536,15 +386,6 @@
 			buildConfigurations = (
 				BC1303361CF28DE300E3AC80 /* Debug */,
 				BC1303371CF28DE300E3AC80 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BC1303381CF28DE300E3AC80 /* Build configuration list for PBXNativeTarget "socialTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BC1303391CF28DE300E3AC80 /* Debug */,
-				BC13033A1CF28DE300E3AC80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
