@@ -76,7 +76,7 @@ class FeedCell: UICollectionViewCell {
     
     let postImageView:UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "coffee")
+//        imageView.image = UIImage(named: "coffee")
         imageView.contentMode = .ScaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
@@ -125,7 +125,7 @@ class FeedCell: UICollectionViewCell {
         addContstraintsWithFormat("H:|-8-[v0(44)]-8-[v1]|", views: profileImg, nameLabel)
         addContstraintsWithFormat("V:|-8-[v0]", views: nameLabel)
         
-        addContstraintsWithFormat("V:|-8-[v0(44)]-4-[v1]-4-[v2(200)][v3(44)][v4(1)][v5(44)]|", views: profileImg, postTextView, postImageView, likesCommentsLabel, dividerLineView, likeButton)
+        addContstraintsWithFormat("V:|-8-[v0(44)]-4-[v1]-4-[v2][v3(44)][v4(1)][v5(44)]|", views: profileImg, postTextView, postImageView, likesCommentsLabel, dividerLineView, likeButton)
         addContstraintsWithFormat("H:|-4-[v0]-4-|", views: postTextView)
         addContstraintsWithFormat("H:|-12-[v0]-12-|", views: dividerLineView)
         addContstraintsWithFormat("H:|[v0]|", views: postImageView)

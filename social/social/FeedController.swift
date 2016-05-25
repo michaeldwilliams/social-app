@@ -33,9 +33,15 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         bPost.textContent = "Love the way they roast these beans"
         bPost.profileImageName = "profile"
         bPost.imageContentName = "beans"
+        let cPost = Post()
+        cPost.name = "Jane Doe"
+        cPost.textContent = "I'm more of a Folgers girl, myself."
+        cPost.profileImageName = "student"
+
         
         dataSource.posts.append(aPost)
         dataSource.posts.append(bPost)
+        dataSource.posts.append(cPost)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
