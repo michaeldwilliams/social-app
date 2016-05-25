@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-struct Post {
-    var name:String
-    var profileImage:UIImage
-    var textContent:String
-    var postDateTime:NSDate
-    var imageContent:UIImage
+class Post {
+    var name:String?
+    var profileImageName:String?
+    var textContent:String?
+//    var postDateTime:NSDate
+    var imageContentName:String?
 }

@@ -10,13 +10,18 @@ import UIKit
 
 class FeedDataSource: NSObject, UICollectionViewDataSource {
 
+    var posts = [Post]()
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath)
+        let feedCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! FeedCell
+        
+        feedCell.post = posts[indexPath.item]
+        
+        return feedCell
     }
     
     

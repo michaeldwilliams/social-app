@@ -10,6 +10,38 @@ import UIKit
 
 class FeedCell: UICollectionViewCell {
     
+    var post:Post? {
+        didSet {
+            if let name = post?.name {
+            
+            let attributedText = NSMutableAttributedString(string: name, attributes: [NSFontAttributeName:UIFont.boldSystemFontOfSize(14)])
+            
+            attributedText.appendAttributedString(NSAttributedString(string: "\nMay 23  •  Los Angeles, CA  •  ", attributes: [NSFontAttributeName:UIFont.systemFontOfSize(10), NSForegroundColorAttributeName:UIColor.lightGrayColor()]))
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 5
+            
+            attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.string.characters.count))
+            
+            let attachment = NSTextAttachment()
+            attachment.image = UIImage(named: "globe")
+            attachment.bounds = CGRectMake(0, -2, 12, 12)
+            attributedText.appendAttributedString(NSAttributedString(attachment: attachment))
+            
+            nameLabel.attributedText = attributedText
+            }
+            if let textContent = post?.textContent {
+                postTextView.text = textContent
+            }
+            if let profileImageName = post?.profileImageName {
+                profileImg.image = UIImage(named: profileImageName)
+            }
+            if let imageContent = post?.imageContentName {
+                postImageView.image = UIImage(named: imageContent)
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -23,24 +55,6 @@ class FeedCell: UICollectionViewCell {
     let nameLabel:UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        
-        let attributedText = NSMutableAttributedString(string: "Michael Williams", attributes: [NSFontAttributeName:UIFont.boldSystemFontOfSize(14)])
-        
-        attributedText.appendAttributedString(NSAttributedString(string: "\nMay 23  •  Los Angeles, CA  •  ", attributes: [NSFontAttributeName:UIFont.systemFontOfSize(10), NSForegroundColorAttributeName:UIColor.lightGrayColor()]))
-        
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-        
-        attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.string.characters.count))
-        
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "globe")
-        attachment.bounds = CGRectMake(0, -2, 12, 12)
-        attributedText.appendAttributedString(NSAttributedString(attachment: attachment))
-        
-        label.attributedText = attributedText
-        
         return label
     }()
     
@@ -110,7 +124,8 @@ class FeedCell: UICollectionViewCell {
         addSubview(shareButton)
         addContstraintsWithFormat("H:|-8-[v0(44)]-8-[v1]|", views: profileImg, nameLabel)
         addContstraintsWithFormat("V:|-8-[v0]", views: nameLabel)
-        addContstraintsWithFormat("V:|-8-[v0(44)]-4-[v1(30)]-4-[v2]-12-[v3]-12-[v4(1)][v5(44)]|", views: profileImg, postTextView, postImageView, likesCommentsLabel, dividerLineView, likeButton)
+        
+        addContstraintsWithFormat("V:|-8-[v0(44)]-4-[v1]-4-[v2(200)][v3(44)][v4(1)][v5(44)]|", views: profileImg, postTextView, postImageView, likesCommentsLabel, dividerLineView, likeButton)
         addContstraintsWithFormat("H:|-4-[v0]-4-|", views: postTextView)
         addContstraintsWithFormat("H:|-12-[v0]-12-|", views: dividerLineView)
         addContstraintsWithFormat("H:|[v0]|", views: postImageView)
