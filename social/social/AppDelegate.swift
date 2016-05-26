@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         window!.makeKeyAndVisible()
-        let feedController = FeedController(collectionViewLayout: UICollectionViewFlowLayout())
+        let feedController = FeedTVController()
         let navigationController = UINavigationController(rootViewController: feedController)
         window?.rootViewController = navigationController
         UINavigationBar.appearance().barTintColor = UIColor.rgb(248, green: 148, blue: 6)

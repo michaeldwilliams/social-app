@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0C60FD4B4A3598B3AB067539 /* Pods_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA637D4A6E2C88C77E04E7B4 /* Pods_social.framework */; };
-		21541F2E1CF3855D00E14EDE /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21541F2D1CF3855D00E14EDE /* FeedController.swift */; };
-		21541F301CF38AB800E14EDE /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21541F2F1CF38AB800E14EDE /* FeedCell.swift */; };
+		21F7CB461CF6323A00FAAB35 /* FeedTVDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */; };
+		21F7CB481CF632C100FAAB35 /* FeedTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB471CF632C100FAAB35 /* FeedTVController.swift */; };
+		21F7CB4A1CF6342100FAAB35 /* FeedTVCellWithPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */; };
+		21F7CB4C1CF66D0500FAAB35 /* FeedTVCellText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */; };
 		BC1303111CF28DE300E3AC80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1303101CF28DE300E3AC80 /* AppDelegate.swift */; };
 		BC1303181CF28DE300E3AC80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1303171CF28DE300E3AC80 /* Assets.xcassets */; };
 		BC13031B1CF28DE300E3AC80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1303191CF28DE300E3AC80 /* LaunchScreen.storyboard */; };
 		BC13033F1CF2906900E3AC80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */; };
-		BC2E71971CF29A1000A84C93 /* FeedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E71961CF29A1000A84C93 /* FeedTVC.swift */; };
-		BC2E71991CF29B1400A84C93 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E71981CF29B1400A84C93 /* FeedDataSource.swift */; };
 		BC2E719B1CF29ED700A84C93 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E719A1CF29ED700A84C93 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		21541F2D1CF3855D00E14EDE /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
-		21541F2F1CF38AB800E14EDE /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedTVDataSource.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		21F7CB471CF632C100FAAB35 /* FeedTVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedTVController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTVCellWithPhoto.swift; sourceTree = "<group>"; };
+		21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTVCellText.swift; sourceTree = "<group>"; };
 		2E70CED4A2FB8CF77C6A08B3 /* Pods_socialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4048393AFB0C22D60DBFF703 /* Pods-socialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialUITests/Pods-socialUITests.release.xcconfig"; sourceTree = "<group>"; };
 		587CF0329552152EF2B4471D /* Pods_socialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,8 +36,6 @@
 		BC13031A1CF28DE300E3AC80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC13031C1CF28DE300E3AC80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BC2E71961CF29A1000A84C93 /* FeedTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTVC.swift; sourceTree = "<group>"; };
-		BC2E71981CF29B1400A84C93 /* FeedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
 		BC2E719A1CF29ED700A84C93 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CA637D4A6E2C88C77E04E7B4 /* Pods_social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45B4998B77501D0BF48E595 /* Pods-socialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialTests/Pods-socialTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,11 +91,11 @@
 				BC1303171CF28DE300E3AC80 /* Assets.xcassets */,
 				BC1303191CF28DE300E3AC80 /* LaunchScreen.storyboard */,
 				BC1303101CF28DE300E3AC80 /* AppDelegate.swift */,
-				21541F2D1CF3855D00E14EDE /* FeedController.swift */,
-				BC2E71981CF29B1400A84C93 /* FeedDataSource.swift */,
-				21541F2F1CF38AB800E14EDE /* FeedCell.swift */,
 				BC2E719A1CF29ED700A84C93 /* Post.swift */,
-				BC2E71961CF29A1000A84C93 /* FeedTVC.swift */,
+				21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */,
+				21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */,
+				21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */,
+				21F7CB471CF632C100FAAB35 /* FeedTVController.swift */,
 				BC13031C1CF28DE300E3AC80 /* Info.plist */,
 				BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */,
 			);
@@ -236,11 +236,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC1303111CF28DE300E3AC80 /* AppDelegate.swift in Sources */,
-				BC2E71971CF29A1000A84C93 /* FeedTVC.swift in Sources */,
-				21541F2E1CF3855D00E14EDE /* FeedController.swift in Sources */,
-				BC2E71991CF29B1400A84C93 /* FeedDataSource.swift in Sources */,
+				21F7CB4C1CF66D0500FAAB35 /* FeedTVCellText.swift in Sources */,
+				21F7CB481CF632C100FAAB35 /* FeedTVController.swift in Sources */,
+				21F7CB461CF6323A00FAAB35 /* FeedTVDataSource.swift in Sources */,
+				21F7CB4A1CF6342100FAAB35 /* FeedTVCellWithPhoto.swift in Sources */,
 				BC2E719B1CF29ED700A84C93 /* Post.swift in Sources */,
-				21541F301CF38AB800E14EDE /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

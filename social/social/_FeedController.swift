@@ -13,6 +13,9 @@ let cellId = "Cell"
 class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var dataSource = FeedDataSource()
+    var aPost:Post!
+    var bPost:Post!
+    var cPost:Post!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +26,17 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         collectionView?.registerClass(FeedCell.self, forCellWithReuseIdentifier: cellId)
         
-        let aPost = Post()
+        aPost = Post()
         aPost.name = "Michael Williams"
         aPost.textContent = "This latte was SOOOO good! I wish I could make a magic fountain of it and shrink it so I could take it around with me and have it whenever I wanted it."
         aPost.profileImageName = "cool"
         aPost.imageContentName = "coffee"
-        let bPost = Post()
+        bPost = Post()
         bPost.name = "John Doe"
         bPost.textContent = "Love the way they roast these beans"
         bPost.profileImageName = "profile"
         bPost.imageContentName = "beans"
-        let cPost = Post()
+        cPost = Post()
         cPost.name = "Jane Doe"
         cPost.textContent = "I'm more of a Folgers girl, myself."
         cPost.profileImageName = "student"
@@ -46,12 +49,17 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
+        
         if let textContent = dataSource.posts[indexPath.item].textContent {
             let rect = NSString(string: textContent).boundingRectWithSize(CGSizeMake(view.frame.width, 1000), options: NSStringDrawingOptions.UsesFontLeading.union(NSStringDrawingOptions.UsesLineFragmentOrigin), attributes: [NSFontAttributeName:UIFont.systemFontOfSize(14)], context: nil)
             
             return CGSizeMake(view.frame.width, rect.height + 370)
         }
         
+        
         return CGSizeMake(view.frame.width, 500)
+
+    
+    
     }
 }

@@ -69,6 +69,7 @@ class FeedCell: UICollectionViewCell {
         let textView = UITextView()
         textView.text = "This is text from a post!"
         textView.font = UIFont.systemFontOfSize(14)
+        textView.backgroundColor = .greenColor()
         textView.scrollEnabled = false
         textView.editable = false
         return textView
@@ -139,21 +140,21 @@ class FeedCell: UICollectionViewCell {
     
 }
 
-extension UIColor {
-    static func rgb(red:CGFloat, green:CGFloat, blue:CGFloat) -> UIColor {
-        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
-    }
-}
-
-extension UIView {
-    func addContstraintsWithFormat(format:String, views:UIView...) {
-        var viewsDictionary = [String:UIView]()
-        for (index, view) in views.enumerate() {
-            let key = "v\(index)"
-            viewsDictionary[key] = view
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
-        
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-}
+//extension UIColor {
+//    static func rgb(red:CGFloat, green:CGFloat, blue:CGFloat) -> UIColor {
+//        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
+//    }
+//}
+//
+//extension UIView {
+//    func addContstraintsWithFormat(format:String, views:UIView...) {
+//        var viewsDictionary = [String:UIView]()
+//        for (index, view) in views.enumerate() {
+//            let key = "v\(index)"
+//            viewsDictionary[key] = view
+//            view.translatesAutoresizingMaskIntoConstraints = false
+//        }
+//        
+//        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
+//    }
+//}
