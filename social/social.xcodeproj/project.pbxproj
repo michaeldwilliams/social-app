@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0C60FD4B4A3598B3AB067539 /* Pods_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA637D4A6E2C88C77E04E7B4 /* Pods_social.framework */; };
+		21D5F6B01CF75EFA001D5F1F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6AF1CF75EFA001D5F1F /* TabBarController.swift */; };
+		21D5F6B21CF76483001D5F1F /* SocialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6B11CF76483001D5F1F /* SocialsViewController.swift */; };
+		21D5F6B41CF7648D001D5F1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6B31CF7648D001D5F1F /* ProfileViewController.swift */; };
+		21D5F6B61CF79DB4001D5F1F /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6B51CF79DB4001D5F1F /* FeedController.swift */; };
 		21F7CB461CF6323A00FAAB35 /* FeedTVDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */; };
-		21F7CB481CF632C100FAAB35 /* FeedTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB471CF632C100FAAB35 /* FeedTVController.swift */; };
 		21F7CB4A1CF6342100FAAB35 /* FeedTVCellWithPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */; };
 		21F7CB4C1CF66D0500FAAB35 /* FeedTVCellText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */; };
 		BC1303111CF28DE300E3AC80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1303101CF28DE300E3AC80 /* AppDelegate.swift */; };
@@ -20,8 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21D5F6AF1CF75EFA001D5F1F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		21D5F6B11CF76483001D5F1F /* SocialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialsViewController.swift; sourceTree = "<group>"; };
+		21D5F6B31CF7648D001D5F1F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		21D5F6B51CF79DB4001D5F1F /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedTVDataSource.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		21F7CB471CF632C100FAAB35 /* FeedTVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedTVController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTVCellWithPhoto.swift; sourceTree = "<group>"; };
 		21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTVCellText.swift; sourceTree = "<group>"; };
 		2E70CED4A2FB8CF77C6A08B3 /* Pods_socialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,13 +95,16 @@
 			isa = PBXGroup;
 			children = (
 				BC1303171CF28DE300E3AC80 /* Assets.xcassets */,
+				21D5F6B11CF76483001D5F1F /* SocialsViewController.swift */,
+				21D5F6B31CF7648D001D5F1F /* ProfileViewController.swift */,
 				BC1303191CF28DE300E3AC80 /* LaunchScreen.storyboard */,
 				BC1303101CF28DE300E3AC80 /* AppDelegate.swift */,
+				21D5F6AF1CF75EFA001D5F1F /* TabBarController.swift */,
 				BC2E719A1CF29ED700A84C93 /* Post.swift */,
 				21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */,
 				21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */,
 				21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */,
-				21F7CB471CF632C100FAAB35 /* FeedTVController.swift */,
+				21D5F6B51CF79DB4001D5F1F /* FeedController.swift */,
 				BC13031C1CF28DE300E3AC80 /* Info.plist */,
 				BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */,
 			);
@@ -237,8 +246,11 @@
 			files = (
 				BC1303111CF28DE300E3AC80 /* AppDelegate.swift in Sources */,
 				21F7CB4C1CF66D0500FAAB35 /* FeedTVCellText.swift in Sources */,
-				21F7CB481CF632C100FAAB35 /* FeedTVController.swift in Sources */,
+				21D5F6B21CF76483001D5F1F /* SocialsViewController.swift in Sources */,
 				21F7CB461CF6323A00FAAB35 /* FeedTVDataSource.swift in Sources */,
+				21D5F6B01CF75EFA001D5F1F /* TabBarController.swift in Sources */,
+				21D5F6B41CF7648D001D5F1F /* ProfileViewController.swift in Sources */,
+				21D5F6B61CF79DB4001D5F1F /* FeedController.swift in Sources */,
 				21F7CB4A1CF6342100FAAB35 /* FeedTVCellWithPhoto.swift in Sources */,
 				BC2E719B1CF29ED700A84C93 /* Post.swift in Sources */,
 			);

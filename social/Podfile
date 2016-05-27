@@ -7,12 +7,12 @@ target 'social' do
 
   # Pods for social
 pod 'Firebase'
+pod 'BLKFlexibleHeightBar'
 
-
-  target 'socialTests' do
-    inherit! :search_paths
+#  target 'socialTests' do
+ #   inherit! :search_paths
     # Pods for testing
-  end
+ # end
 
 #  target 'socialUITests' do
 #    inherit! :search_paths

@@ -8,24 +8,37 @@
 
 import UIKit
 import Firebase
+import BLKFlexibleHeightBar
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = UIWindow(frame: UIScreen.mainScreen().bounds)
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
         
         window!.makeKeyAndVisible()
-        let feedController = FeedTVController()
+        let feedController = FeedController()
         let navigationController = UINavigationController(rootViewController: feedController)
-        window?.rootViewController = navigationController
+        let tabBarController = TabBarController()
+        let vc1 = navigationController
+        let vc3 = ProfileViewController()
+        let vc2 = SocialsViewController()
+        tabBarController.setViewControllers([vc1, vc2, vc3], animated: true)
+        window?.rootViewController = tabBarController
         UINavigationBar.appearance().barTintColor = UIColor.rgb(248, green: 148, blue: 6)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
-        
+        let feedImage = UIImage(named: "feed")
+        let feedImageSelected = UIImage(named: "feed_selected")
+        let socialsImage = UIImage(named: "socials")
+        let socialsImageSelected = UIImage(named: "socials_selected")
+        let profileImage = UIImage(named: "profile")
+        let profileImageSelected = UIImage(named: "profile_selected")
+        vc1.tabBarItem = UITabBarItem(title: "Feed", image: feedImage, selectedImage: feedImageSelected)
+        vc2.tabBarItem = UITabBarItem(title: "Socials", image: socialsImage, selectedImage: socialsImageSelected)
+        vc3.tabBarItem = UITabBarItem(title: "Me", image: profileImage, selectedImage: profileImageSelected)
         application.statusBarStyle = .LightContent
         
         return true

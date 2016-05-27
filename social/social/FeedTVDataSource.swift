@@ -27,15 +27,16 @@ class FeedTVDataSource: NSObject, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
-            if FeedTVCellWithPhoto().post?.imageContentName != "" || FeedTVCellWithPhoto().post?.imageContentName != nil {
-                let photoFeedCell = tableView.dequeueReusableCellWithIdentifier(FeedTVController().cellId, forIndexPath: indexPath) as! FeedTVCellWithPhoto
-                photoFeedCell.post = posts[indexPath.section]
-                return photoFeedCell
-            }
-            else {
-                let textFeedCell = tableView.dequeueReusableCellWithIdentifier(FeedTVController().textCellId, forIndexPath: indexPath) as! FeedTVCellText
-                textFeedCell.post = posts[indexPath.section]
-                return textFeedCell
-            }
+        let post:Post? = posts[indexPath.section]
+        
+        if let _ = post?.imageContentName {
+            let photoFeedCell = tableView.dequeueReusableCellWithIdentifier(FeedController().cellId, forIndexPath: indexPath) as? FeedTVCellWithPhoto
+            photoFeedCell?.post = post
+            return photoFeedCell!
+        }
+        
+        let textFeedCell = tableView.dequeueReusableCellWithIdentifier(FeedController().textCellId, forIndexPath: indexPath) as? FeedTVCellText
+        textFeedCell?.post = post
+        return textFeedCell!
     }
 }
