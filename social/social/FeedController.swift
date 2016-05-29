@@ -16,7 +16,12 @@ class FeedController: UIViewController, UITableViewDelegate, UIScrollViewDelegat
     var dataSource = FeedTVDataSource()
     let cellId = "PhotoCell"
     let textCellId = "TextCell"
-
+    
+    
+    func addPost() {
+        presentViewController(AddPostController(), animated: true, completion: nil)
+    }
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -32,7 +37,6 @@ class FeedController: UIViewController, UITableViewDelegate, UIScrollViewDelegat
             bar.backgroundColor = UIColor.rgb(248, green: 148, blue: 6)
             return bar
         }()
-        
 
         tableView.dataSource = dataSource
         self.tableView.delegate = self
@@ -40,8 +44,14 @@ class FeedController: UIViewController, UITableViewDelegate, UIScrollViewDelegat
         self.view.addSubview(tableView)
         self.view.addSubview(statusBarColor)
         navigationItem.title = "Feed"
+        let addPost = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(FeedController.addPost))
+        self.navigationItem.rightBarButtonItem = addPost
+        addPost.tintColor = .whiteColor()
+        
+        
+        
         self.view.backgroundColor = UIColor.rgb(248, green: 148, blue: 6)
-        tableView.backgroundColor = UIColor.lightGrayColor()
+        tableView.backgroundColor = UIColor.rgb(218, green: 223, blue: 225)
         tableView.alwaysBounceVertical = true
         tableView.registerClass(FeedTVCellWithPhoto.self, forCellReuseIdentifier: cellId)
         tableView.registerClass(FeedTVCellText.self, forCellReuseIdentifier: textCellId)

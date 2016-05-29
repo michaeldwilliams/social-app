@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C60FD4B4A3598B3AB067539 /* Pods_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA637D4A6E2C88C77E04E7B4 /* Pods_social.framework */; };
+		2124388A1CFA69EE0065057E /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212438891CFA69EE0065057E /* FirebaseService.swift */; };
+		2184E4DE1CF7F81500D9AA24 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2184E4DD1CF7F81500D9AA24 /* QuartzCore.framework */; };
+		2184E4E01CF802C300D9AA24 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184E4DF1CF802C300D9AA24 /* AddPostController.swift */; };
 		21D5F6B01CF75EFA001D5F1F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6AF1CF75EFA001D5F1F /* TabBarController.swift */; };
 		21D5F6B21CF76483001D5F1F /* SocialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6B11CF76483001D5F1F /* SocialsViewController.swift */; };
 		21D5F6B41CF7648D001D5F1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6B31CF7648D001D5F1F /* ProfileViewController.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212438891CFA69EE0065057E /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		2184E4DD1CF7F81500D9AA24 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2184E4DF1CF802C300D9AA24 /* AddPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
 		21D5F6AF1CF75EFA001D5F1F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		21D5F6B11CF76483001D5F1F /* SocialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialsViewController.swift; sourceTree = "<group>"; };
 		21D5F6B31CF7648D001D5F1F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2184E4DE1CF7F81500D9AA24 /* QuartzCore.framework in Frameworks */,
 				0C60FD4B4A3598B3AB067539 /* Pods_social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +111,8 @@
 				21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */,
 				21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */,
 				21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */,
+				2184E4DF1CF802C300D9AA24 /* AddPostController.swift */,
+				212438891CFA69EE0065057E /* FirebaseService.swift */,
 				21D5F6B51CF79DB4001D5F1F /* FeedController.swift */,
 				BC13031C1CF28DE300E3AC80 /* Info.plist */,
 				BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */,
@@ -114,6 +123,7 @@
 		CFA5E156F865A23E83860E12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2184E4DD1CF7F81500D9AA24 /* QuartzCore.framework */,
 				CA637D4A6E2C88C77E04E7B4 /* Pods_social.framework */,
 				587CF0329552152EF2B4471D /* Pods_socialTests.framework */,
 				2E70CED4A2FB8CF77C6A08B3 /* Pods_socialUITests.framework */,
@@ -245,11 +255,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC1303111CF28DE300E3AC80 /* AppDelegate.swift in Sources */,
+				2184E4E01CF802C300D9AA24 /* AddPostController.swift in Sources */,
 				21F7CB4C1CF66D0500FAAB35 /* FeedTVCellText.swift in Sources */,
 				21D5F6B21CF76483001D5F1F /* SocialsViewController.swift in Sources */,
 				21F7CB461CF6323A00FAAB35 /* FeedTVDataSource.swift in Sources */,
 				21D5F6B01CF75EFA001D5F1F /* TabBarController.swift in Sources */,
 				21D5F6B41CF7648D001D5F1F /* ProfileViewController.swift in Sources */,
+				2124388A1CFA69EE0065057E /* FirebaseService.swift in Sources */,
 				21D5F6B61CF79DB4001D5F1F /* FeedController.swift in Sources */,
 				21F7CB4A1CF6342100FAAB35 /* FeedTVCellWithPhoto.swift in Sources */,
 				BC2E719B1CF29ED700A84C93 /* Post.swift in Sources */,

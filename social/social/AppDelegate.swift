@@ -21,11 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window!.makeKeyAndVisible()
         let feedController = FeedController()
-        let navigationController = UINavigationController(rootViewController: feedController)
+        let socialsController = SocialsViewController()
+        let profileController = ProfileViewController()
+        let feedNavigationController = UINavigationController(rootViewController: feedController)
+        let socialsNavigationController = UINavigationController(rootViewController: socialsController)
+        let profileNavigationController = UINavigationController(rootViewController: profileController)
         let tabBarController = TabBarController()
-        let vc1 = navigationController
-        let vc3 = ProfileViewController()
-        let vc2 = SocialsViewController()
+        let vc1 = feedNavigationController
+        let vc2 = socialsNavigationController
+        let vc3 = profileNavigationController
         tabBarController.setViewControllers([vc1, vc2, vc3], animated: true)
         window?.rootViewController = tabBarController
         UINavigationBar.appearance().barTintColor = UIColor.rgb(248, green: 148, blue: 6)

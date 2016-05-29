@@ -7,7 +7,9 @@ target 'social' do
 
   # Pods for social
 pod 'Firebase'
+pod 'Firebase/Database'
 pod 'BLKFlexibleHeightBar'
+pod 'ChameleonFramework/Swift'
 
 #  target 'socialTests' do
  #   inherit! :search_paths

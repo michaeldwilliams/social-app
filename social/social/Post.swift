@@ -13,6 +13,7 @@ class Post {
     var name:String?
     var profileImageName:String?
     var textContent:String?
-//    var postDateTime:NSDate
+    var createdDate:String?
     var imageContentName:String?
+    var id:String?
 }
