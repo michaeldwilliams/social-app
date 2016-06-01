@@ -15,6 +15,7 @@
 		21D5F6B21CF76483001D5F1F /* SocialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6B11CF76483001D5F1F /* SocialsViewController.swift */; };
 		21D5F6B41CF7648D001D5F1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6B31CF7648D001D5F1F /* ProfileViewController.swift */; };
 		21D5F6B61CF79DB4001D5F1F /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5F6B51CF79DB4001D5F1F /* FeedController.swift */; };
+		21F5D7CC1CFE5AAC003C98D9 /* SocialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5D7CB1CFE5AAC003C98D9 /* SocialsCollectionViewCell.swift */; };
 		21F7CB461CF6323A00FAAB35 /* FeedTVDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */; };
 		21F7CB4A1CF6342100FAAB35 /* FeedTVCellWithPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */; };
 		21F7CB4C1CF66D0500FAAB35 /* FeedTVCellText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */; };
@@ -33,6 +34,7 @@
 		21D5F6B11CF76483001D5F1F /* SocialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialsViewController.swift; sourceTree = "<group>"; };
 		21D5F6B31CF7648D001D5F1F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		21D5F6B51CF79DB4001D5F1F /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		21F5D7CB1CFE5AAC003C98D9 /* SocialsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialsCollectionViewCell.swift; sourceTree = "<group>"; };
 		21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedTVDataSource.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTVCellWithPhoto.swift; sourceTree = "<group>"; };
 		21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTVCellText.swift; sourceTree = "<group>"; };
@@ -103,17 +105,18 @@
 			children = (
 				BC1303171CF28DE300E3AC80 /* Assets.xcassets */,
 				21D5F6B11CF76483001D5F1F /* SocialsViewController.swift */,
+				21F5D7CB1CFE5AAC003C98D9 /* SocialsCollectionViewCell.swift */,
 				21D5F6B31CF7648D001D5F1F /* ProfileViewController.swift */,
 				BC1303191CF28DE300E3AC80 /* LaunchScreen.storyboard */,
 				BC1303101CF28DE300E3AC80 /* AppDelegate.swift */,
 				21D5F6AF1CF75EFA001D5F1F /* TabBarController.swift */,
 				BC2E719A1CF29ED700A84C93 /* Post.swift */,
-				21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */,
 				21F7CB491CF6342100FAAB35 /* FeedTVCellWithPhoto.swift */,
 				21F7CB4B1CF66D0500FAAB35 /* FeedTVCellText.swift */,
 				2184E4DF1CF802C300D9AA24 /* AddPostController.swift */,
 				212438891CFA69EE0065057E /* FirebaseService.swift */,
 				21D5F6B51CF79DB4001D5F1F /* FeedController.swift */,
+				21F7CB451CF6323A00FAAB35 /* FeedTVDataSource.swift */,
 				BC13031C1CF28DE300E3AC80 /* Info.plist */,
 				BC13033E1CF2906900E3AC80 /* GoogleService-Info.plist */,
 			);
@@ -257,6 +260,7 @@
 				BC1303111CF28DE300E3AC80 /* AppDelegate.swift in Sources */,
 				2184E4E01CF802C300D9AA24 /* AddPostController.swift in Sources */,
 				21F7CB4C1CF66D0500FAAB35 /* FeedTVCellText.swift in Sources */,
+				21F5D7CC1CFE5AAC003C98D9 /* SocialsCollectionViewCell.swift in Sources */,
 				21D5F6B21CF76483001D5F1F /* SocialsViewController.swift in Sources */,
 				21F7CB461CF6323A00FAAB35 /* FeedTVDataSource.swift in Sources */,
 				21D5F6B01CF75EFA001D5F1F /* TabBarController.swift in Sources */,

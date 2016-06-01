@@ -45,7 +45,7 @@ class FeedTVCellWithPhoto: UITableViewCell {
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .Default, reuseIdentifier: FeedController().cellId)
+        super.init(style: .Default, reuseIdentifier: FeedController.sharedFeedInstance.cellId)
         setupViews()
     }
     required init?(coder aDecoder: NSCoder) {

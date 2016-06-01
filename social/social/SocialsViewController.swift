@@ -8,28 +8,45 @@
 
 import UIKit
 
-class SocialsViewController: UIViewController {
+class SocialsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    var flowLayout:UICollectionViewLayout?
+    var collectionView:UICollectionView?
+    var socialCell = "Cell"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        flowLayout = UICollectionViewLayout()
+        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout!)
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
+        collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: socialCell)
+        collectionView?.backgroundColor = .whiteColor()
+        self.view.addSubview(collectionView!)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(socialCell, forIndexPath: indexPath)
+        cell.backgroundColor = .grayColor()
+        return cell
     }
-    */
+
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
+    {
+        return CGSizeMake(50, 50);
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
+    {
+        return UIEdgeInsetsMake(5, 5, 5, 5); //top,left,bottom,right
+    }
 
 }

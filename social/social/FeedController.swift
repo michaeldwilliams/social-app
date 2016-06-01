@@ -7,16 +7,23 @@
 //
 
 import UIKit
-import BLKFlexibleHeightBar
 
 
-class FeedController: UIViewController, UITableViewDelegate, UIScrollViewDelegate {
+class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let tableView = UITableView(frame: UIScreen.mainScreen().bounds, style: UITableViewStyle.Plain)
-    var dataSource = FeedTVDataSource()
+//    var dataSource = FeedTVDataSource()
     let cellId = "PhotoCell"
     let textCellId = "TextCell"
-    
+    let firebaseService = FirebaseService.sharedInstance
+    static let sharedFeedInstance = FeedController()
+    var posts = [Post]() {
+        didSet {
+            tableView.reloadData()
+            print("posts: \(posts.count)")
+
+        }
+    }
     
     func addPost() {
         presentViewController(AddPostController(), animated: true, completion: nil)
@@ -26,7 +33,7 @@ class FeedController: UIViewController, UITableViewDelegate, UIScrollViewDelegat
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
-
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -38,66 +45,34 @@ class FeedController: UIViewController, UITableViewDelegate, UIScrollViewDelegat
             return bar
         }()
 
-        tableView.dataSource = dataSource
-        self.tableView.delegate = self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.registerClass(FeedTVCellWithPhoto.self, forCellReuseIdentifier: cellId)
+        tableView.registerClass(FeedTVCellText.self, forCellReuseIdentifier: textCellId)
         self.view.addSubview(tableView)
         self.view.addSubview(statusBarColor)
-        navigationItem.title = "Feed"
+        
+        self.navigationItem.title = "Feed"
+        
+        //Add Post Button
         let addPost = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(FeedController.addPost))
         self.navigationItem.rightBarButtonItem = addPost
         addPost.tintColor = .whiteColor()
         
-        
-        
         self.view.backgroundColor = UIColor.rgb(248, green: 148, blue: 6)
         tableView.backgroundColor = UIColor.rgb(218, green: 223, blue: 225)
         tableView.alwaysBounceVertical = true
-        tableView.registerClass(FeedTVCellWithPhoto.self, forCellReuseIdentifier: cellId)
-        tableView.registerClass(FeedTVCellText.self, forCellReuseIdentifier: textCellId)
         
         self.view.addContstraintsWithFormat("V:|[v0]|", views: tableView)
         self.view.addContstraintsWithFormat("H:|[v0]|", views: tableView)
         self.view.addContstraintsWithFormat("V:|[v0(20)]|", views: statusBarColor)
         self.view.addContstraintsWithFormat("H:|[v0]|", views: statusBarColor)
-        
-        let aPost = Post()
-        aPost.name = "Michael Williams"
-        aPost.textContent = "This latte was SOOOO good! I wish I could make a magic fountain of it and shrink it so I could take it around with me and have it whenever I wanted it."
-        aPost.profileImageName = "cool"
-        aPost.imageContentName = "coffee"
-        let bPost = Post()
-        bPost.name = "John Doe"
-        bPost.textContent = "Love the way they roast these beans"
-        bPost.profileImageName = "mustache"
-        bPost.imageContentName = "beans"
-        let cPost = Post()
-        cPost.name = "Jane Doe"
-        cPost.textContent = "I'm more of a Folgers girl, myself."
-        cPost.profileImageName = "student"
-        cPost.imageContentName = nil
-        let dPost = Post()
-        dPost.name = "Tim Doe"
-        dPost.textContent = "Boy, do I love french fries!"
-        dPost.profileImageName = "mustache"
-        dPost.imageContentName = nil
-        let ePost = Post()
-        ePost.name = "John Doe"
-        ePost.textContent = "Hate the way they roast these beans"
-        ePost.profileImageName = "mustache"
-        ePost.imageContentName = "beans"
-        
-        dataSource.posts.append(aPost)
-        dataSource.posts.append(bPost)
-        dataSource.posts.append(cPost)
-        dataSource.posts.append(dPost)
-        dataSource.posts.append(ePost)
-        
+    
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
-        tableView.reloadData()
-
+    
+        firebaseService.getAllPosts()
         
     }
     
@@ -115,7 +90,36 @@ class FeedController: UIViewController, UITableViewDelegate, UIScrollViewDelegat
     }
     
     
+    // MARK: - Table view data source
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        print("sections: \(posts.count)")
+        return posts.count
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let post:Post? = posts[indexPath.section]
+        
+        
+        if let _ = post?.imageContentName {
+            let photoFeedCell = tableView.dequeueReusableCellWithIdentifier(self.cellId, forIndexPath: indexPath) as? FeedTVCellWithPhoto
+            photoFeedCell?.post = post
+            return photoFeedCell!
+        }
+        
+        let textFeedCell = tableView.dequeueReusableCellWithIdentifier(self.textCellId, forIndexPath: indexPath) as? FeedTVCellText
+        textFeedCell?.post = post
+        return textFeedCell!
+    }
 }
+
+
+
 
 
 extension UIColor {

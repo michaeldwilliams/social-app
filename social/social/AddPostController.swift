@@ -16,23 +16,21 @@ class AddPostController: UIViewController, UITextViewDelegate {
     var postButton:UIBarButtonItem?
     var navBar: UINavigationBar?
     var toolBar:UIToolbar?
-    let post = Post()
-    let firebaseService = FirebaseService()
+    let post:Post! = nil
     
     func cancelPost() {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     func postPost() {
-        post.id = firebaseService.id
-        post.textContent = textView.text
-        post.name = "Michael Williams"
-        post.profileImageName = "cool"
-        post.imageContentName = "coffee"
-        post.createdDate = convertCurrentTimeToString()
-        let postArray:[String:AnyObject] = ["name":post.name!, "profileImageName":post.profileImageName!, "textContent":post.textContent!, "imageContentName":post.imageContentName!, "createdDate":post.createdDate!, "id":post.id!]
+        self.post.textContent = textView.text
+        self.post.name = "Michael Williams"
+        self.post.profileImageName = "cool"
+        self.post.imageContentName = "coffee"
+        self.post.createdDate = convertCurrentTimeToString()
+        let postArray:[String:AnyObject] = ["name":self.post.name!, "profileImageName":self.post.profileImageName!, "textContent":self.post.textContent!, "imageContentName":self.post.imageContentName!, "createdDate":self.post.createdDate!]
         dismissViewControllerAnimated(true) {
-            self.firebaseService.savePost(postArray)
+            FirebaseService.sharedInstance.savePost(postArray)
         }
     }
     

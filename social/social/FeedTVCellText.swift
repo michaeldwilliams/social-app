@@ -40,7 +40,7 @@ class FeedTVCellText: UITableViewCell {
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .Default, reuseIdentifier: FeedController().textCellId)
+        super.init(style: .Default, reuseIdentifier: FeedController.sharedFeedInstance.textCellId)
         setupViews()
     }
     required init?(coder aDecoder: NSCoder) {
