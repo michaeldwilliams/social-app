@@ -13,15 +13,20 @@ import Firebase
 class Post {
     var postRef:FIRDatabaseReference?
     
-    var name:String?
+    var name = String()
     var profileImageName:String?
-    var textContent:String?
-    var createdDate:String?
+    var textContent = ""
+    var createdDate = ""
     var imageContentName:String?
-    var id:String?
+    var id = ""
+    
+    init(name:String, profileImageName:String) {
+        self.name = name
+        self.profileImageName = profileImageName
+    }
 
     
-     init(key: String, dictionary: Dictionary<String, AnyObject>) {
+    init(key: String, dictionary: Dictionary<String, AnyObject>) {
         self.id = key
         
         // Within Key, the following properties are children
@@ -50,7 +55,9 @@ class Post {
         
         // The above properties are assigned to their key.
         
-        self.postRef = FirebaseService.sharedInstance.ref.child("posts").child(id!)
+        self.postRef = FirebaseService.sharedInstance.ref.child("posts").child(id)
     }
 
+    
+    
 }

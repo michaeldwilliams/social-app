@@ -10,7 +10,7 @@ import UIKit
 
 class SocialsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    var flowLayout:UICollectionViewLayout?
+    var flowLayout:UICollectionViewFlowLayout?
     var collectionView:UICollectionView?
     var socialCell = "Cell"
     
@@ -18,7 +18,8 @@ class SocialsViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        flowLayout = UICollectionViewLayout()
+        flowLayout = UICollectionViewFlowLayout()
+//        flowLayout?.itemSize = CGSize(width: 150, height: 200)
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout!)
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -29,7 +30,7 @@ class SocialsViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -41,7 +42,7 @@ class SocialsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-        return CGSizeMake(50, 50);
+        return CGSizeMake(115, 150);
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets

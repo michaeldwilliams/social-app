@@ -8,6 +8,7 @@ target 'social' do
   # Pods for social
 pod 'Firebase'
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
 pod 'BLKFlexibleHeightBar'
 pod 'ChameleonFramework/Swift'
 

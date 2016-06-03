@@ -15,17 +15,17 @@ class FeedTVCellText: UITableViewCell {
                 
                 let attributedText = NSMutableAttributedString(string: name, attributes: [NSFontAttributeName:UIFont.boldSystemFontOfSize(14)])
                 
-                attributedText.appendAttributedString(NSAttributedString(string: "\nMay 23  •  Los Angeles, CA  •  ", attributes: [NSFontAttributeName:UIFont.systemFontOfSize(10), NSForegroundColorAttributeName:UIColor.lightGrayColor()]))
+                attributedText.appendAttributedString(NSAttributedString(string: "\n\(post!.createdDate)  •  Los Angeles, CA", attributes: [NSFontAttributeName:UIFont.systemFontOfSize(10), NSForegroundColorAttributeName:UIColor.lightGrayColor()]))
                 
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.lineSpacing = 5
                 
                 attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.string.characters.count))
                 
-                let attachment = NSTextAttachment()
-                attachment.image = UIImage(named: "globe")
-                attachment.bounds = CGRectMake(0, -2, 12, 12)
-                attributedText.appendAttributedString(NSAttributedString(attachment: attachment))
+//                let attachment = NSTextAttachment()
+//                attachment.image = UIImage(named: "globe")
+//                attachment.bounds = CGRectMake(0, -2, 12, 12)
+//                attributedText.appendAttributedString(NSAttributedString(attachment: attachment))
                 
                 nameLabel.attributedText = attributedText
             }
@@ -40,7 +40,7 @@ class FeedTVCellText: UITableViewCell {
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .Default, reuseIdentifier: FeedController.sharedFeedInstance.textCellId)
+        super.init(style: .Default, reuseIdentifier: FeedController().textCellId)
         setupViews()
     }
     required init?(coder aDecoder: NSCoder) {

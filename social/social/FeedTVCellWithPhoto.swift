@@ -17,17 +17,17 @@ class FeedTVCellWithPhoto: UITableViewCell {
                 
                 let attributedText = NSMutableAttributedString(string: name, attributes: [NSFontAttributeName:UIFont.boldSystemFontOfSize(14)])
                 
-                attributedText.appendAttributedString(NSAttributedString(string: "\nMay 23  •  Los Angeles, CA  •  ", attributes: [NSFontAttributeName:UIFont.systemFontOfSize(10), NSForegroundColorAttributeName:UIColor.lightGrayColor()]))
+                attributedText.appendAttributedString(NSAttributedString(string: "\n\(post!.createdDate)  •  Los Angeles, CA", attributes: [NSFontAttributeName:UIFont.systemFontOfSize(10), NSForegroundColorAttributeName:UIColor.lightGrayColor()]))
                 
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.lineSpacing = 5
                 
                 attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.string.characters.count))
                 
-                let attachment = NSTextAttachment()
-                attachment.image = UIImage(named: "globe")
-                attachment.bounds = CGRectMake(0, -2, 12, 12)
-                attributedText.appendAttributedString(NSAttributedString(attachment: attachment))
+//                let attachment = NSTextAttachment()
+//                attachment.image = UIImage(named: "globe")
+//                attachment.bounds = CGRectMake(0, -2, 12, 12)
+//                attributedText.appendAttributedString(NSAttributedString(attachment: attachment))
                 
                 nameLabel.attributedText = attributedText
             }
@@ -38,14 +38,13 @@ class FeedTVCellWithPhoto: UITableViewCell {
                 profileImg.image = UIImage(named: profileImageName)
             }
             if let imageContent = post?.imageContentName {
-                print(imageContent)
                 postImageView.image = UIImage(named: imageContent)
             }
         }
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .Default, reuseIdentifier: FeedController.sharedFeedInstance.cellId)
+        super.init(style: .Default, reuseIdentifier: FeedController().cellId)
         setupViews()
     }
     required init?(coder aDecoder: NSCoder) {
@@ -133,7 +132,7 @@ class FeedTVCellWithPhoto: UITableViewCell {
         addContstraintsWithFormat("V:[v0(44)]|", views: shareButton)
         addContstraintsWithFormat("V:|-8-[v0(44)]-4-[v1]-4-[v2(200)][v3(44)][v4(1)][v5(44)]|", views: profileImg, postTextView, postImageView, likesCommentsLabel, dividerLineView, likeButton)
         addContstraintsWithFormat("H:|[v0]|", views: postImageView)
-        
-    
     }
+    
+    
 }

@@ -16,11 +16,9 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let cellId = "PhotoCell"
     let textCellId = "TextCell"
     let firebaseService = FirebaseService.sharedInstance
-    static let sharedFeedInstance = FeedController()
     var posts = [Post]() {
         didSet {
             tableView.reloadData()
-            print("posts: \(posts.count)")
 
         }
     }
@@ -72,8 +70,9 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
     
-        firebaseService.getAllPosts()
-        
+        firebaseService.getAllPosts(self)
+        firebaseService.getNewPosts(self)
+
     }
     
     
@@ -93,7 +92,6 @@ class FeedController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        print("sections: \(posts.count)")
         return posts.count
     }
     
