@@ -21,7 +21,7 @@ class AddPostController: UIViewController, UITextViewDelegate, UIImagePickerCont
     var imagePicker:UIImagePickerController?
     var imageURL = NSURL()
     var addPostImageView:UIImageView?
-    var imageName = String()
+    var downloadURL = NSURL()
     
     func cancelPost() {
         dismissViewControllerAnimated(true, completion: nil)
@@ -29,9 +29,9 @@ class AddPostController: UIViewController, UITextViewDelegate, UIImagePickerCont
     
     func postPost() {
         self.post.createdDate = convertCurrentTimeToString()
-        let postArray:[String:AnyObject] = ["name":self.post.name, "profileImageName":self.post.profileImageName!, "textContent":self.textView.text, "imageContentName":self.imageName, "createdDate":self.post.createdDate]
+        self.downloadURL = FirebaseService.sharedInstance.savePostImages(self.imageURL, user: "MichaelWilliams")
+        let postArray:[String:AnyObject] = ["name":self.post.name, "profileImageName":self.post.profileImageName!, "textContent":self.textView.text, "imageContentName":"\(self.downloadURL)", "createdDate":self.post.createdDate]
         dismissViewControllerAnimated(true) {
-            FirebaseService.sharedInstance.savePostImages(self.imageURL, user: "MichaelWilliams")
             FirebaseService.sharedInstance.savePost(postArray)
         }
     }
@@ -153,8 +153,6 @@ class AddPostController: UIViewController, UITextViewDelegate, UIImagePickerCont
         let asset = assets.firstObject
         asset?.requestContentEditingInputWithOptions(nil, completionHandler: { (contentEditingInput,info) in
             self.imageURL = (contentEditingInput?.fullSizeImageURL)!
-            self.imageName = self.imageURL.lastPathComponent!
-            print(self.imageURL)
         })
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         self.addPostImageView?.contentMode = .ScaleAspectFit

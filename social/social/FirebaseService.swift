@@ -15,7 +15,6 @@ class FirebaseService {
     
     let ref = FIRDatabase.database().reference()
     let storageRef = FIRStorage.storage().referenceForURL("gs://social-23c49.appspot.com")
-    var downloadURL:NSURL?
     
     private init() {}
     
@@ -83,8 +82,9 @@ class FirebaseService {
     }
     
     
-    func savePostImages(url:NSURL, user:String) {
+    func savePostImages(url:NSURL, user:String) -> NSURL {
         let imageURL = url
+        var _downloadURL:NSURL?
         let filePath = user +
             "/\(Int(NSDate.timeIntervalSinceReferenceDate() * 1000))/\(url.lastPathComponent!)"
         let imagesRef = storageRef.child("postImages").child(filePath)
@@ -93,9 +93,13 @@ class FirebaseService {
                 print("Error:\(error?.localizedDescription)")
             }
             else {
-                self.downloadURL = metadata!.downloadURL()
+                let downloadURL = metadata!.downloadURL()
+                print(downloadURL)
+                _downloadURL = downloadURL
+                
             }
         }
+        return _downloadURL!
     }
 
 
